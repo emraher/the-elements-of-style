@@ -21,6 +21,7 @@ This is an enhanced fork of [obra/elements-of-style](https://github.com/obra/ele
 ## The Rules
 
 Elementary Rules of Usage (Grammar/Punctuation):
+
 1. Form possessive singular by adding 's
 2. Use comma after each term in series except last
 3. Enclose parenthetic expressions between commas
@@ -30,6 +31,7 @@ Elementary Rules of Usage (Grammar/Punctuation):
 7. Participial phrase at beginning refers to grammatical subject
 
 Elementary Principles of Composition:
+
 8. One paragraph per topic
 9. Begin paragraph with topic sentence
 10. Use active voice
@@ -47,9 +49,11 @@ Rules 10-13 and 16 matter most for technical writing.
 ## Before & After Example
 
 Before (Passive, vague, wordy):
+
 > The new feature that was added to the system is not yet available to all users due to the fact that there are still some issues that need to be resolved.
 
 After (Active, concrete, concise):
+
 > We added a new feature but haven't released it to all users yet. Three bugs block the rollout.
 
 Rules applied: Active voice (10), Positive form (11), Concrete language (12), Omit needless words (13)
@@ -57,6 +61,7 @@ Rules applied: Active voice (10), Positive form (11), Concrete language (12), Om
 ## When Claude Uses This
 
 Claude invokes `writing-clearly-and-concisely` when:
+
 - Writing or editing documentation (READMEs, guides, API docs)
 - Crafting commit messages or PR descriptions
 - Creating error messages, logs, or UI copy
@@ -76,11 +81,13 @@ Claude invokes `writing-clearly-and-concisely` when:
 ## Token Efficiency
 
 The original 1918 text is ~50,000 words. This plugin condenses it to:
+
 - quick-reference.md: ~300 tokens (fast lookup)
 - SKILL.md: ~600 tokens (when to use guide)
 - elements-of-style.md: ~1,400 tokens (complete guide with examples)
 
 Comparison:
+
 - Original full text: ~25,000 tokens
 - This plugin: 300-1,400 tokens (94-98% reduction)
 
@@ -105,6 +112,7 @@ Enhancements in v2.0.0: 87% token reduction, technical writing examples, quick r
 Issues and pull requests welcome at [github.com/emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style).
 
 When contributing:
+
 - Maintain token efficiency (measure before/after)
 - Add technical writing examples where relevant
 - Follow Strunk's rules in your own writing
