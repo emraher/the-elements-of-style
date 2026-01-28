@@ -1,38 +1,111 @@
 # The Elements of Style - Claude Code Plugin
 
-A Claude Code plugin providing William Strunk Jr.'s *The Elements of Style* (1918) as a reference skill for clear, precise writing.
+A Claude Code plugin that distills William Strunk Jr.'s *The Elements of Style* (1918) into a practical writing reference for technical documentation, user-facing text, and any prose.
 
-## Purpose
+## What This Plugin Does
 
-This plugin gives Claude access to Strunk's foundational writing guidance when working on documentation, user-facing text, or any prose that needs clarity and proper style.
+Gives Claude access to Strunk's writing principles in a token-efficient format. When Claude writes documentation, commit messages, error messages, or other prose, it consults these rules.
 
-## What's Inside
+## Installation
 
-The plugin provides:
+```bash
+# Clone into your Claude Code plugins directory
+cd ~/.claude/plugins  # or your plugins directory
+git clone https://github.com/emraher/the-elements-of-style.git
+```
 
-- **Skill**: `writing-clearly-and-concisely` - Guidance on when and how to use Strunk's rules
-- **Reference**: Complete 1918 text with all rules, examples, and usage guidance (~12,000 tokens)
+Claude automatically detects and uses the skill when appropriate.
 
-The reference contains:
+**Note**: This is an enhanced fork of [obra/elements-of-style](https://github.com/obra/elements-of-style) with 87% token reduction, expanded technical examples, and comprehensive example suite. For the most up-to-date version, use this repository.
 
-1. **Elementary Rules of Usage** - Seven fundamental grammar and punctuation rules
-2. **Elementary Principles of Composition** - Eleven rules for clear, effective writing
-3. **Words and Expressions Commonly Misused** - An alphabetical guide to usage pitfalls
+## The Rules
 
-## Usage
+**Elementary Rules of Usage (Grammar/Punctuation):**
+1. Form possessive singular by adding 's
+2. Use comma after each term in series except last
+3. Enclose parenthetic expressions between commas
+4. Comma before conjunction introducing co-ordinate clause
+5. Don't join independent clauses by comma
+6. Don't break sentences in two
+7. Participial phrase at beginning refers to grammatical subject
 
-Once installed, Claude will automatically use the `writing-clearly-and-concisely` skill when appropriate. The skill:
+**Elementary Principles of Composition:**
+8. One paragraph per topic
+9. Begin paragraph with topic sentence
+10. **Use active voice** ⭐
+11. **Put statements in positive form** ⭐
+12. **Use definite, specific, concrete language** ⭐
+13. **Omit needless words** ⭐
+14. Avoid succession of loose sentences
+15. Express co-ordinate ideas in similar form
+16. **Keep related words together** ⭐
+17. Keep to one tense in summaries
+18. **Place emphatic words at end** ⭐
 
-- Warns about the 12,000-token reference size
-- Lists all rules at a glance
-- Suggests dispatching a subagent for copyediting when context is limited
-- Only loads the full reference when actively writing or editing prose
+The starred rules matter most for technical writing.
 
-## Source
+## Before & After Example
 
-This text is in the public domain. The original 1918 edition by William Strunk Jr. was obtained from Project Gutenberg and converted to clean markdown format.
+**Before (Passive, vague, wordy):**
+> The new feature that was added to the system is not yet available to all users due to the fact that there are still some issues that need to be resolved.
 
-- **Original Source**: [Project Gutenberg #37134](https://www.gutenberg.org/files/37134/37134-h/37134-h.htm)
-- **Author**: William Strunk Jr.
-- **Publication**: 1918
-- **License**: Public Domain
+**After (Active, concrete, concise):**
+> We added a new feature but haven't released it to all users yet. Three bugs block the rollout.
+
+**Rules applied:** Active voice (10), Positive form (11), Concrete language (12), Omit needless words (13)
+
+## When Claude Uses This
+
+Claude invokes `writing-clearly-and-concisely` when:
+- Writing or editing documentation (READMEs, guides, API docs)
+- Crafting commit messages or PR descriptions
+- Creating error messages, logs, or UI copy
+- Writing code comments or docstrings
+- Explaining technical concepts
+- Any task requiring prose for human readers
+
+## What's Included
+
+- **All 18 core rules** with practical examples
+- **Before/after comparisons** for every major rule
+- **Technical writing examples**: Git commits, API docs, error messages, code comments
+- **Common mistakes**: Word usage (data/datum, less/fewer, like/as, effect/affect)
+- **Example suite**: 100+ examples demonstrating good and bad writing
+- **Quick reference**: 300-token version for fast lookup
+
+## Token Efficiency
+
+The original 1918 text is ~50,000 words. This plugin condenses it to:
+- **quick-reference.md**: ~300 tokens (fast lookup)
+- **SKILL.md**: ~600 tokens (when to use guide)
+- **elements-of-style.md**: ~1,400 tokens (complete guide with examples)
+
+**Comparison:**
+- Original full text: ~25,000 tokens
+- This plugin: 300-1,400 tokens (94-98% reduction)
+
+This makes the guidance cheap enough to consult frequently rather than only when context allows.
+
+## Source & License
+
+Based on William Strunk Jr.'s 1918 edition, obtained from [Project Gutenberg #37134](https://www.gutenberg.org/files/37134/37134-h/37134-h.htm).
+
+**License**: Public Domain (see LICENSE file)
+
+**Original Text**: William Strunk Jr. (1918)
+
+**Initial Plugin**: Jesse Vincent ([obra/elements-of-style](https://github.com/obra/elements-of-style))
+
+**Enhanced & Maintained**: emraher ([emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style))
+
+Enhancements in v2.0.0: 87% token reduction, technical writing examples, quick reference, example suite. See CHANGELOG.md for details.
+
+## Contributing
+
+Issues and pull requests welcome at [github.com/emraher/the-elements-of-style](https://github.com/emraher/the-elements-of-style).
+
+When contributing:
+- Maintain token efficiency (measure before/after)
+- Add technical writing examples where relevant
+- Follow Strunk's rules in your own writing
+- Include examples for new content
